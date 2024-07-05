@@ -1,1 +1,1 @@
-input("Nameplease:")
+print("Hello World")

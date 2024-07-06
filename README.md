@@ -12,3 +12,4 @@ This repository contains mini projects completed as part of my Python course.
 - Project 6:
 - Project 7:
 - Project 8:
+ 

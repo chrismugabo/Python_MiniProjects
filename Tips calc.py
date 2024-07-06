@@ -6,3 +6,4 @@ tbill=bill +(bill *(tip/100))
 
 total=tbill/5
 print(f"each person should pay {round(total,2)}")
+

@@ -5,4 +5,4 @@ n=int(input("how many people should split the bill?"))
 tbill=bill +(bill *(tip/100))
 
 total=tbill/5
-print(f"each person should pay {total,2}")
+print(f"each person should pay {round(total,2)}")

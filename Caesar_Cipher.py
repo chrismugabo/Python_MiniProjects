@@ -7,23 +7,23 @@ shift = int(input("Type the shift number:\n"))
 
 #The Encrypt function
 def caesar(message,input,choice):
-if (choice=="encode"):
-    
-    cipher_text=""
-    for i in message:
-        if i in alphabet:
-            old_index=alphabet.index(i)
-            new_index=old_index + input
-        cipher_text+=alphabet[new_index]
-    print(f"The encoded text {cipher_text}")
+    if (choice=="encode"):
+        
+        cipher_text=""
+        for i in message:
+            if i in alphabet:
+                old_index=alphabet.index(i)
+                new_index=old_index + input
+            cipher_text+=alphabet[new_index]
+        print(f"The encoded text {cipher_text}")
 
-    decipher_text=""
-    for i in message:
-        if i in alphabet:
-            old_index=alphabet.index(i)
-            new_index=old_index - input
-        decipher_text+=alphabet[new_index]
-    print(f"The decoded text is {decipher_text}")
+        decipher_text=""
+        for i in message:
+            if i in alphabet:
+                old_index=alphabet.index(i)
+                new_index=old_index - input
+            decipher_text+=alphabet[new_index]
+        print(f"The decoded text is {decipher_text}")
 
 
 # 

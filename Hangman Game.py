@@ -1,87 +1,48 @@
+# Import necessary modules
+# Import necessary modules
+# Import necessary modules
+# Import necessary modules
+# Import necessary modules
+import random
+from hangman_words import word_list  # Import the list of words
+from hangaman_art import stages  # Import the ASCII art for the game stages
 
-import random 
-#ASCII
-stages = ['''
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========
-''']
-word_list = ["aardvark", "baboon", "camel"]
-chosen_word = random.choice(word_list)
+# Game initialization
+lives = len(stages)  # Set initial lives based on the number of stages
+end_of_game = False  # Flag to control the game loop
+chosen_word = random.choice(word_list)  # Randomly select a word from the list
+word_length = len(chosen_word)  # Get the length of the chosen word
 
-#Testing code
+# Debugging line to help during development (should be removed in production)
 print(f'Pssst, the solution is {chosen_word}.')
 
-#TODO-1: - Create an empty List called display.
-#For each letter in the chosen_word, add a "_" to 'display'.
-#So if the chosen_word was "apple", display should be ["_", "_", "_", "_", "_"] with 5 "_" representing each letter to guess.
-display=[]
-
-for i in range(0,len(chosen_word)):
-    display.append("_")
+# Initialize the display list with underscores for each letter in the chosen word
+display = []
+for i in range(word_length):
+  display.append("_")
 print(display)
-# #If the letter at that position matches 'guess' then reveal that letter in the display at that position.
 
-end_of_game=False
-while(not end_of_game):
-     guess = input("Guess a letter: ").lower()
-     for letter in range(len(display)):
-          if chosen_word[letter] == guess:
-            display[letter]=guess
-     print(display)
+# Main game loop
+while not end_of_game:
+  guess = input("Guess a letter: ").lower()  # Prompt the user for a guess
 
-     if("_" not in display):
-      end_of_game=True
-      print("You win")
-# # #Hint - Don't worry about getting the user to guess the next letter. We'll tackle that in step 3.
+  # Check each letter in the chosen word against the user's guess
+  for letter in range(len(display)):
+    if chosen_word[letter] == guess:
+      display[letter] = guess  # Reveal the guessed letter in the display
+  print(display)
+  
+  # If the guess is incorrect, reduce lives
+  if guess not in chosen_word:
+    lives -= 1
+  print(stages[lives])  # Display the current stage of the hangman
+
+  # Check for loss condition
+  if lives == 0:
+    end_of_game = True
+    print("You lose")
+
+  # Check for win condition
+  if "_" not in display:
+    end_of_game = True
+    print("You win")

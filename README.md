@@ -12,5 +12,6 @@ Welcome to my repository of Python mini projects! These projects were completed 
 4. **Rock-Paper-Scissors Game** - The classic game implemented in Python to play against the computer.
 5. **Password Generator** - Generate secure and random passwords based on user preferences.
 6. **Hangman Game** - A word guessing game that challenges you to save the hangman from doom.
-7. **Calculator** - A simple yet powerful calculator to perform basic arithmetic operations.
+7. **Calculator** - A simple yet powerful calculator to perform basic arithmetic operations.## Projects Overview
+8. **Coffee Machine Simulator** - A simulation of a coffee machine that handles orders, processes transactions, and manages resources like water, milk, and coffee.
  

@@ -7,7 +7,7 @@ shift = int(input("Type the shift number:\n"))
 
 #The Encrypt function
 def caesar(message,input,choice):
-    if choice== "encode":
+    if choice== "encode": 
         
         cipher_text=""
         for i in message:
